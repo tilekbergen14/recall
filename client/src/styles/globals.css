@@ -6,6 +6,50 @@
   --text-color: #ffffff;
 }
 
+[data-theme="theme1"] {
+  --color1: #775ada;
+  --color2: #ff304f;
+}
+
+[data-theme="theme2"] {
+  --color1: #2f89fc;
+  --color2: #22eaaa;
+}
+
+[data-theme="theme3"] {
+  --color1: #482ff7;
+  --color2: #46c3db;
+}
+
+[data-theme="theme4"] {
+  --color1: #a7ff83;
+  --color2: #071a52;
+}
+
+[data-theme="theme5"] {
+  --color1: #e7b3b3;
+  --color2: #feb062;
+  --text-color: #000000;
+}
+
+[data-theme="theme6"] {
+  --color1: #7c203a;
+  --color2: #ff9f68;
+  --text-color: #000000;
+}
+
+[data-theme="theme7"] {
+  --color1: #22d1ee;
+  --color2: #fcf8f8;
+  --text-color: #000000;
+}
+
+[data-theme="theme8"] {
+  --color1: #fc5c9c;
+  --color2: #fcefee;
+  --text-color: #000000;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +60,7 @@ body {
   margin: 0;
   height: 100vh;
   font-family: "Poppins", sans-serif;
+  transition: all 1s ease-out;
 }
 
 a {
@@ -57,4 +102,12 @@ button {
   min-width: 100px;
   cursor: pointer;
   outline: none;
+}
+
+.white {
+  color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
 }
