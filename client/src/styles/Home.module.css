@@ -41,23 +41,117 @@
 /*left*/
 .left {
   flex: 1;
+  max-width: 100%;
+  overflow: hidden;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary-color);
 }
 .notebox {
   display: flex;
+  position: relative;
   justify-content: space-between;
-  overflow-x: hidden;
 }
+
 .box {
   height: 200px;
-  width: 200px;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .image {
   border-radius: 20px 20px 0 0;
-  width: 200px;
+}
+.notetext {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+.notetext > p {
+  margin: 0;
+  color: #fff;
+  width: 160px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.notes {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 400px;
+  overflow-y: scroll;
+  padding: 0 20px;
+}
+.notes::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.notetext1 {
+  color: white;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 50px;
+}
+.notedate {
+  font-size: 0.8rem;
+  color: white;
+}
+/*space*/
+.space {
+  width: 10%;
 }
 /*right*/
 .right {
   flex: 1;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.taskbox {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+  overflow-y: scroll;
+}
+.taskbox::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+/*task*/
+.task {
+  display: flex;
+  justify-content: space-between;
+}
+.taskLeft {
+  color: white;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 5%;
+  margin: 10px 0 0 0;
+}
+.taskDate {
+  margin: 0 0 10px 0;
+  color: rgb(200, 193, 193);
+  font-size: 0.8rem;
+}
+.taskRight {
+  color: white;
+}
+.taskStatus {
+  font-size: 0.9rem;
+  color: white;
+}
+.horline {
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  margin-bottom: 10px;
 }

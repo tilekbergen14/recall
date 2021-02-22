@@ -4,6 +4,7 @@
   --color1: #22d1ee;
   --color2: #0e153a;
   --text-color: #ffffff;
+  --secondary-color: #000000;
   --error-color: #ff304f;
 }
 
@@ -97,6 +98,10 @@ input {
 .bg-wrapper {
   background-image: linear-gradient(var(--color1), var(--color2));
 }
+.container {
+  margin: 0 20px;
+}
+
 button {
   background-color: transparent;
   height: 45px;
@@ -153,4 +158,23 @@ button {
 
 .mb-0 {
   margin-bottom: 0;
+}
+.ml-2 {
+  margin-left: 10px;
+}
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.toright {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
 }
