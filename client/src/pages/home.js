@@ -1,41 +1,38 @@
-import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import { Avatar } from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Theme from "../components/Theme";
-import Notebox from "../components/Notebox";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import Notebox from "../components/NoteBox";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import NoteStrText from "../components/NoteStrText";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import Notetext from "../components/Notetext";
 import Task from "../components/Task";
+import { useState, useEffect } from "react";
+import Theme from "../components/Theme";
+import CreateTask from "../components/CreateTask";
+import CreateNote from "../components/CreateNote";
 
-export default function home() {
+export default function home(props) {
   const [toggle, setToggle] = useState(false);
   const [showthemes, setShowthemes] = useState(false);
+  const [createTask, setCreateTask] = useState(false);
+  const [createNote, setCreateNote] = useState(false);
 
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    document.documentElement.setAttribute("data-theme", theme);
-  }, []);
-
+  useEffect(() => {}, []);
   return (
     <div className={styles.home}>
-      <div className={styles.header}>
-        <h4>ReCall</h4>
-        <div className={styles.rightside}>
-          <span className={styles.userInfo}>
+      <header className="flex align-items-center space-between">
+        <h3 className="logo">ReCall</h3>
+        <div>
+          <div className="flex align-items-center">
             <Avatar />
-            <h6 className={styles.username}>Tiqu</h6>
-            <ExpandMoreIcon
-              className="pointer"
-              onClick={() => setToggle((toggle) => !toggle)}
-            />
-          </span>
+            <p className={styles.username}>Username</p>
+            <ArrowDropDownIcon onClick={() => setToggle((toggle) => !toggle)} />
+          </div>
           {toggle && (
             <div className={styles.dropdown}>
-              <p className="pointer">Logout</p>
+              <p className="pointer main-color">Logout</p>
               <p
-                className="pointer mb-0"
+                className="pointer main-color mb-0"
                 onClick={() => setShowthemes((showthemes) => !showthemes)}
               >
                 Theme
@@ -44,46 +41,57 @@ export default function home() {
             </div>
           )}
         </div>
-      </div>
-      <div className={styles.content}>
-        <div className={styles.left}>
-          <div className={styles.navigation}>
-            <p className="title pointer">Notes</p>
-          </div>
-          <div className={styles.notebox}>
-            <Notebox />
-            <Notebox />
+      </header>
+      <main>
+        <div className={styles.leftSide}>
+          <p className="title">Notes</p>
+          <div className="flex space-between flex-wrap">
             <Notebox />
           </div>
-          <div className="flex toright">
-            <p>Show all notes</p>
-            <ArrowRightAltIcon className="ml-2" />
+          <div className={styles.noteStrBox}>
+            <NoteStrText />
           </div>
-          <div className={`${styles.notes} border`}>
-            <Notetext />
-          </div>
-          <div className="flex toright">
-            <p>Create new note </p>
-            <AddCircleOutlineIcon className="ml-2" />
+          <div className="flex align-items-center space-between main-color">
+            <div
+              className="flex align-items-center pointer"
+              onClick={() => setCreateNote(true)}
+            >
+              <p> Create new note</p>
+              <AddCircleOutlineIcon className="ml-10" />
+            </div>
+            <div className="flex align-items-center pointer">
+              <p>See all notes</p>
+              <ArrowRightAltIcon className="ml-10" />
+            </div>
           </div>
         </div>
-        <div className={styles.space}></div>
-        <div className={styles.right}>
+        <div className="space"></div>
+        <div className={styles.rightSide}>
           <p className="title">Don't forget</p>
-          <div className={`${styles.taskbox} border`}>
-            <div className="flex space-between">
-              <p className="white">Task</p>
-              <p className="white">Status</p>
-            </div>
-
+          <div className={styles.taskBox}>
+            <header className="flex space-between">
+              <p className="title">Task</p>
+              <p className="title">Status</p>
+            </header>
             <Task />
           </div>
-          <div className="flex toright">
-            <p>Create new task </p>
-            <AddCircleOutlineIcon className="ml-2" />
+          <div className="flex space-between main-color">
+            <div
+              className="flex align-items-center pointer"
+              onClick={() => setCreateTask((createTask) => !createTask)}
+            >
+              <p className="pointer">Create new task</p>
+              <AddCircleOutlineIcon className="ml-10" />
+            </div>
+            <div className="flex align-items-center pointer">
+              <p>See all tasks</p>
+              <ArrowRightAltIcon className="ml-10" />
+            </div>
           </div>
         </div>
-      </div>
+      </main>
+      {createTask && <CreateTask setCreateTask={() => setCreateTask(false)} />}
+      {createNote && <CreateNote close={() => setCreateNote(false)} />}
     </div>
   );
 }

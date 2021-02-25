@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;900&display=swap");
 
 :root {
   --color1: #22d1ee;
   --color2: #0e153a;
-  --text-color: #ffffff;
+  --main-color: #ffffff;
   --secondary-color: #000000;
   --error-color: #ff304f;
 }
-
+/*theme-colors*/
 [data-theme="theme1"] {
   --color1: #775ada;
   --color2: #ff304f;
@@ -31,39 +31,39 @@
 [data-theme="theme5"] {
   --color1: #e7b3b3;
   --color2: #feb062;
-  --text-color: #000000;
+  --main-color: #000;
+  --secondary-color: #ffffff;
 }
 
 [data-theme="theme6"] {
   --color1: #7c203a;
   --color2: #ff9f68;
-  --text-color: #000000;
+  --main-color: #000;
+  --secondary-color: #ffffff;
 }
 
 [data-theme="theme7"] {
   --color1: #22d1ee;
   --color2: #fcf8f8;
-  --text-color: #000000;
+  --main-color: #000;
+  --secondary-color: #ffffff;
 }
 
 [data-theme="theme8"] {
   --color1: #fc5c9c;
   --color2: #fcefee;
-  --text-color: #000000;
-}
-
-* {
-  box-sizing: border-box;
+  --main-color: #000;
+  --secondary-color: #ffffff;
 }
 
 html,
 body {
   padding: 0;
-  margin: 0;
-  height: 100vh;
   font-family: "Poppins", sans-serif;
-  transition: all 1s ease-out;
   background-image: linear-gradient(var(--color1), var(--color2));
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0 20px;
 }
 
 a {
@@ -71,58 +71,10 @@ a {
   text-decoration: none;
 }
 
-h5 {
-  font-size: 24px;
-  margin: 0;
+* {
+  box-sizing: border-box;
 }
-
-h4 {
-  font-size: 36px;
-  margin: 0;
-}
-
-a,
-p,
-input {
-  color: var(--text-color);
-}
-
-input {
-  font-family: "Poppins", sans-serif;
-  padding-left: 15px;
-}
-/*******************/
-.border {
-  border-radius: 20px;
-}
-.bg-wrapper {
-  background-image: linear-gradient(var(--color1), var(--color2));
-}
-.container {
-  margin: 0 20px;
-}
-
-button {
-  background-color: transparent;
-  height: 45px;
-  border-radius: 20px;
-  min-width: 100px;
-  cursor: pointer;
-  outline: none;
-}
-
-.white {
-  color: #fff;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.disabled {
-  pointer-events: none;
-}
-
+/*theme*/
 .themereview {
   height: 20px;
   width: 80%;
@@ -155,26 +107,142 @@ button {
 .theme8 {
   background-image: linear-gradient(#fc5c9c, #fcefee);
 }
+/*utility classes*/
+.flex {
+  display: flex;
+}
 
+.align-items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.logo {
+  font-size: 26px;
+  margin: 10px 0;
+}
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--main-color);
+}
+.border-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.border {
+  border-radius: 20px;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 36px;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+.main-color {
+  color: var(--main-color);
+}
+.px-20 {
+  padding: 0 20px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.mr-5 {
+  margin-left: 5px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
 .mb-0 {
   margin-bottom: 0;
 }
-.ml-2 {
-  margin-left: 10px;
+.pointer {
+  cursor: pointer;
 }
-.title {
-  font-size: 1.1rem;
-  font-weight: 600;
+.space {
+  width: 6%;
+}
+.w-100 {
+  width: 100%;
+}
+.button {
+  background-color: transparent;
+  height: 45px;
+  border-radius: 20px;
+  min-width: 100px;
+  cursor: pointer;
+  outline: none;
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-}
-.toright {
-  justify-content: flex-end;
+.title-2 {
+  font-size: 1.2rem;
+  color: var(--main-color);
 }
 
-.space-between {
-  justify-content: space-between;
+select {
+  background-color: #46c3db;
+  color: var(--main-color);
+  font-size: 16px;
+  outline: none;
+  border: none;
+  width: max-content;
+  padding: 10px 0;
+}
+.flex-1 {
+  flex: 1;
+}
+.warning {
+  color: #feb062;
+}
+.error {
+  color: var(--error-color);
+}
+.success {
+  color: #a7ff83;
+}
+.text-center {
+  text-align: center;
+}
+.flex-01 {
+  flex: 0.2;
+}
+/*media queries*/
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    margin: 0 5px;
+  }
+  .logo {
+    font-size: 26px;
+    margin: 10px 0;
+  }
+  .display-none {
+    display: none;
+  }
+  select {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  .space {
+    width: 1%;
+  }
+  body {
+    margin: 0 5px;
+  }
 }

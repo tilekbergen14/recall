@@ -1,0 +1,58 @@
+.modal {
+  pointer-events: visible;
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(181, 197, 273, 0.5);
+}
+
+.box {
+  background-color: #ffffff;
+  position: absolute;
+  padding: 0 30px;
+  width: 500px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  outline: none;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #2f89fc;
+  color: #2f89fc;
+}
+.input::placeholder {
+  color: #2f89fc;
+}
+.title {
+  color: #46c3db;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+.button {
+  border: 1px solid #46c3db;
+  color: #46c3db;
+}
+.button:hover {
+  background-color: #46c3db;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 692px) {
+  .box {
+    width: 90%;
+  }
+}

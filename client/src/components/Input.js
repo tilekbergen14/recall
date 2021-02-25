@@ -1,6 +1,6 @@
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
-import styles from "../styles/First.module.css";
+import styles from "../styles/Index.module.css";
 import { useState } from "react";
 
 export default function Input({

@@ -1,15 +1,10 @@
 import Head from "next/head";
-import styles from "../styles/First.module.css";
+import styles from "../styles/Index.module.css";
 import { useEffect, useState } from "react";
 import Input from "../components/Input";
 import axios from "axios";
 
 export default function Home() {
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    document.documentElement.setAttribute("data-theme", theme);
-  }, []);
-
   const [login, setLogin] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -66,8 +61,8 @@ export default function Home() {
         <title>ReCall | Home</title>
       </Head>
       <div className={styles.header}>
-        <h4>ReCall</h4>
-        <h5>Welcome!</h5>
+        <h4 className="logo">ReCall</h4>
+        <h5 className="logo">Welcome!</h5>
       </div>
       <div className={styles.content}>
         <div className={styles.error}>{error && error}</div>
